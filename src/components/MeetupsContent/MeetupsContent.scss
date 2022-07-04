@@ -67,9 +67,12 @@
   display: flex;
 
   &--register {
-    padding: 1rem;
+    padding: 0.5rem;
     margin: 1rem;
     width: 6rem;
+    background-color: $primary;
+    border-radius: 25px;
+    color: white;
   }
 
   &--delete {
