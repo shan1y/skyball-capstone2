@@ -1,0 +1,91 @@
+@import "../../styles/variables.scss";
+.create-event {
+  &__title {
+    margin-block: 1rem;
+  }
+  &__form {
+    margin-inline: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 0.5rem;
+
+    &-input {
+      border: 1px solid $divider;
+      text-indent: 15px;
+      &::placeholder {
+        text-indent: 15px;
+      }
+      &--date {
+        filter: invert(30%);
+      }
+    }
+
+    &--upload {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 1rem;
+      &-icons {
+        gap: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &-button {
+      margin-top: 1rem;
+      background-color: $primary;
+      width: 6rem;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        background-color: $primary-auth-hover;
+      }
+    }
+  }
+}
+
+label {
+  font-size: 12px;
+  @include tablet {
+    font-size: 16px;
+  }
+}
+
+.upload__button {
+  background-color: hsl(71deg, 73%, 54%);
+  width: 6rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  text-align: center;
+  background-color: hsl(71deg, 73%, 54%);
+  width: 10rem;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 14px;
+
+  &-error {
+    color: rgb(139, 0, 23);
+  }
+  &-success {
+    color: $dark;
+  }
+}

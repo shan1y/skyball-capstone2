@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+.clinics {
+  background-color: honeydew;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title--homepage {
+    background-color: $dark;
+    color: white;
+    border-radius: 25px;
+    width: 9rem;
+    padding-block: 0.5rem;
+  }
+  &-section__title {
+    color: $black;
+  }
+
+  &-section__description {
+    color: $black;
+    padding-block: 1rem;
+    @include contain;
+  }
+}

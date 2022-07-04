@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+$Poppins: "Poppins", sans-serif;
+
+// colors
+$dark: hsl(179, 62%, 43%);
+
+$dark-v2: hsl(179, 63%, 36%);
+$light: #fff;
+$primary: hsl(71, 73%, 54%);
+$primary-hover: rgba(211, 228, 134, 1);
+$primary-auth: rgba(211, 228, 134, 0.3);
+$primary-auth-hover: rgba(138, 161, 33, 0.3);
+$dark-hover: hsl(178, 100%, 94%);
+$dark-hover-v2: hsl(179, 63%, 84%);
+$bg: rgb(244, 244, 255);
+$divider: rgb(201, 201, 201);
+$black: rgb(54, 54, 54);
+
+//- Cyan: hsl(179, 62%, 43%)
+// - Bright Yellow: hsl(71, 73%, 54%)
+
+// ### Neutral
+
+// - Light Gray: hsl(204, 43%, 93%)
+// - Grayish Blue: hsl(218, 22%, 67%)
+
+//- Family: [Karla](https://fonts.google.com/specimen/Karla)
+//- Weights: 400, 700
+
+// spacing
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+// border radius
+$borderRadius: 12px;
+
+// header height
+$headerHeight: 80px;
+
+//page-margin
+$mobile-padding: 3rem;
+
+@mixin breakpoint($point) {
+  @if $point == md {
+    // 768px
+    @media (min-width: 48em) {
+      @content;
+    }
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1268px) {
+    @content;
+  }
+}
+
+@mixin contain {
+  @media (min-width: 900px) {
+    max-width: 800px;
+  }
+}

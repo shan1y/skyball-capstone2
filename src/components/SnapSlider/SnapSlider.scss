@@ -1,0 +1,97 @@
+@import "../../styles/variables.scss";
+
+.snap-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 1rem auto;
+  height: 15rem;
+  width: 15rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  border-radius: 10px 10px 0 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+    margin: 0 1rem;
+  }
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 8px;
+
+    &-thumb {
+      max-height: 0.1875rem;
+      border-radius: 0.25rem;
+      background-color: $dark;
+      border-radius: 3px;
+    }
+
+    &-track {
+      background-color: lightgrey;
+      border-radius: 3px;
+    }
+  }
+
+  &__image {
+    &--1 {
+      height: 15rem;
+      width: 15rem;
+      object-fit: contain;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    &--2 {
+      height: 15rem;
+      width: 15rem;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+    }
+
+    &--3 {
+      height: 15rem;
+      min-width: 15rem;
+      object-fit: cover;
+      scroll-snap-align: end;
+      scroll-snap-stop: always;
+    }
+  }
+}
+
+.slider__tablet-container {
+  display: none;
+  @include tablet {
+    display: flex;
+  }
+}
+
+.slider__coach {
+  display: none;
+  &-img {
+    width: 14rem;
+    height: 16rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  &-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &-description {
+    padding-top: 1rem;
+    color: $black;
+    font-weight: bold;
+  }
+  &-qualifications {
+    max-width: 14rem;
+    color: $black;
+    font-size: 12px;
+  }
+}

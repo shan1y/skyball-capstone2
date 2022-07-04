@@ -1,0 +1,43 @@
+@import "../variables.scss";
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 16px;
+  @include tablet {
+    font-size: 20px;
+  }
+}
+
+button {
+  border: none;
+  font-size: 10px;
+  @include tablet {
+    font-size: 14px;
+  }
+}
+
+p {
+  font-size: 10px;
+  @include tablet {
+    font-size: 14px;
+  }
+}
+
+h3 {
+  font-size: 12px;
+  @include tablet {
+    font-size: 16p;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+  @include tablet {
+    font-size: 14px;
+  }
+}

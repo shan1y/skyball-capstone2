@@ -1,0 +1,45 @@
+@import "../../styles/variables.scss";
+
+.clinic {
+  &__container {
+    border: 1px solid $divider;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  &__mobile-container {
+    display: flex;
+  }
+
+  &__info {
+    color: black;
+    font-size: 12px;
+    border-bottom: 1px solid $divider;
+    padding-bottom: 1rem;
+    text-align: left;
+  }
+
+  &__description {
+    color: black;
+    font-size: 12px;
+    padding: 1rem 0;
+  }
+  &__image {
+    width: 6rem;
+    height: auto;
+    margin-right: 0.5rem;
+  }
+  &__accordian {
+    width: 100%;
+    color: white;
+    background-color: $primary;
+    padding: 1rem;
+
+    &-table {
+      background-color: $primary;
+      text-align: left;
+    }
+  }
+}

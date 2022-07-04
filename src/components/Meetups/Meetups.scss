@@ -1,0 +1,56 @@
+@import "../../styles/variables.scss";
+.meetups {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1.5rem;
+    padding-top: 3rem;
+    margin-block: 1rem;
+    margin-inline: auto;
+    @include tablet {
+      max-width: 800px;
+    }
+  }
+
+  &__top-photo {
+    width: 13rem;
+    height: 7rem;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    border-radius: 5px;
+    @include tablet {
+      width: 13rem;
+      height: 7rem;
+    }
+  }
+
+  &__card {
+    height: 20rem;
+    border-radius: 5px;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../../assets/images/sand.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    padding: 2rem 0.5rem 0.5rem 0.5rem;
+    @include tablet {
+      padding-top: 4rem;
+      height: 15rem;
+    }
+
+    &-body {
+      font-weight: 300;
+      padding: 1rem;
+      @include contain;
+    }
+  }
+}

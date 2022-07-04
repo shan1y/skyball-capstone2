@@ -1,0 +1,149 @@
+@import "../../../styles/variables.scss";
+
+.background {
+  height: 100vh;
+  background-image: linear-gradient(to top right, $dark, $dark-hover);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth {
+  &-container {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: absolute;
+    margin-inline: 1rem;
+    border-radius: 10px;
+    @include tablet {
+      display: flex;
+      margin: 5rem;
+      margin-inline: 5rem;
+    }
+  }
+  &__top-container {
+    background-image: linear-gradient(to top right, $dark-v2, $dark-hover-v2);
+    position: relative;
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+    @include tablet {
+      padding: 3rem;
+    }
+  }
+  &-hero-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-image {
+    background-image: url("../../../assets/images/beach.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 17vh;
+    width: 17rem;
+    border-radius: 10px;
+    margin-block: 1rem;
+    @include tablet {
+      height: 30vh;
+      margin-block: 2rem;
+      width: 30rem;
+    }
+    @include desktop {
+      height: 60vh;
+      width: 40rem;
+    }
+  }
+  &-title {
+    padding-top: 1rem;
+    font-weight: 300;
+    color: white;
+  }
+  &-subtitle {
+    font-weight: 300;
+    color: white;
+    font-size: 14px;
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__bottom-container {
+    background-color: $primary-auth;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0px 0px 10px 10px;
+    padding: 1rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $dark-v2;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  &__sign-button {
+    text-decoration: none;
+    padding: 1rem;
+    color: $dark-v2;
+  }
+  &__sign-up {
+    text-decoration: none;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: $dark;
+    font-weight: 500;
+    color: $dark-v2;
+    &--text {
+      padding-top: 0.5rem;
+      color: $dark-v2;
+    }
+  }
+}
+
+.form {
+  &__container {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 1rem;
+  }
+
+  &__input-wrapper {
+    position: relative;
+  }
+
+  &__input-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 4px;
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+  }
+}
+input {
+  text-indent: 40px;
+  height: 2rem;
+  width: 15rem;
+  border: none;
+  border-radius: 25px;
+  &::placeholder {
+    text-indent: 40px;
+    color: rgb(200, 202, 202);
+  }
+}
