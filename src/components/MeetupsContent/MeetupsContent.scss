@@ -124,6 +124,7 @@
     background-color: $primary;
     border-radius: 25px;
     color: white;
+    font-weight: bold;
     margin-bottom: 1rem;
     cursor: pointer;
     &:hover {
@@ -131,7 +132,7 @@
       transition: all 0.2s ease;
     }
     @include tablet {
-      font-size: 14px;
+      font-size: 12px;
       width: 8rem;
     }
   }
@@ -147,7 +148,7 @@
       transition: all 0.2s ease;
     }
     @include tablet {
-      font-size: 14px;
+      font-size: 12px;
       width: 8rem;
     }
   }
