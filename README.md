@@ -50,7 +50,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 <!-- Screenshots -->
 ### :camera: Screenshots
 
-![App Screenshot]((https://firebasestorage.googleapis.com/v0/b/skyball-c1e25.appspot.com/o/images%2FPicture1.png?alt=media&token=341bbab0-5af2-4cbd-9448-1dfb8150b27c))
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/skyball-c1e25.appspot.com/o/images%2FPicture1.png?alt=media&token=341bbab0-5af2-4cbd-9448-1dfb8150b27c)
 
 
 <!-- TechStack -->
