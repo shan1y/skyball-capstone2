@@ -1,34 +1,75 @@
 @import "../../styles/variables.scss";
 
 .clinic {
+  &__titles {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
   &__container {
     border: 1px solid $divider;
     display: flex;
     flex-direction: column;
     padding: 1rem;
     margin: 1rem;
+    max-width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  &__greater-container {
+    height: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__register-title {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__register-description {
+    margin-top: 1rem;
+    padding-inline: 2rem;
+    text-align: center;
   }
 
   &__mobile-container {
     display: flex;
+    border-bottom: 1px solid $divider;
   }
 
   &__info {
     color: black;
     font-size: 12px;
-    border-bottom: 1px solid $divider;
-    padding-bottom: 1rem;
-    text-align: left;
+
+    padding-block: 0.5rem;
+    &-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 1rem;
+    }
   }
 
   &__description {
     color: black;
     font-size: 12px;
     padding: 1rem 0;
+
+    &-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
   &__image {
-    width: 6rem;
-    height: auto;
+    width: auto;
+    height: 10rem;
     margin-right: 0.5rem;
   }
   &__accordian {

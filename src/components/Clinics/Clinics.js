@@ -14,6 +14,9 @@ function Clinics({ userId }) {
         self-officiated with the option to choose from various skill levels.
       </p>
       <SnapSlider />
+      <p className="clinics__coaches-description">
+        Featured Coaches: Sarah Paravan, Hugo Rosso, Melissa Peredes
+      </p>
       <Link to="/clinics">
         <p className="clinics__title--homepage">See clinics</p>
       </Link>

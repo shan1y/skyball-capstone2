@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import MeetupsContent from "../MeetupsContent/MeetupsContent";
 
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";

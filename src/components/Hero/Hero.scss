@@ -2,9 +2,7 @@
 @import "../../styles/variables.scss";
 
 .hero {
-  // height: 50vh;
   padding: 1rem 0.75rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +11,7 @@
   margin-inline: auto;
   @include tablet {
     max-width: 900px;
+    padding: 3rem;
   }
 
   &__image {
@@ -43,7 +42,7 @@
   }
 
   &__body {
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
   }
   &__button {
     background-color: $primary;
@@ -54,7 +53,7 @@
     width: 7rem;
     cursor: pointer;
     &:hover {
-      background-color: $dark;
+      background-color: rgb(84, 97, 23);
     }
     @include tablet {
       width: 9rem;

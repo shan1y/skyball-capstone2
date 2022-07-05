@@ -21,23 +21,35 @@ function ClinicsPage({ userId }) {
 
   return (
     <div className="clinic">
-      {coaches &&
-        coaches.map((coach) => (
-          <div className="clinic__container" key={coach.id}>
-            <div className="clinic__mobile-container">
-              <div className="clinic__image-container">
-                <img src={coach.image} className="clinic__image"></img>
+      <div className="clinic__titles">
+        <h2 className="clinic__register-title">
+          Register for Beach Volleyball Clinics
+        </h2>
+        <p className="clinic__register-description">
+          Sign up for one (or many!) beach volleyball clinics offered by local
+          coaches, and improve your skills in a group setting.
+        </p>
+      </div>
+      <div className="clinic__greater-container">
+        {coaches &&
+          coaches.map((coach) => (
+            <div className="clinic__container" key={coach.id}>
+              <div className="clinic__mobile-container">
+                <div className="clinic__image-container">
+                  <img src={coach.image} className="clinic__image"></img>
+                </div>
+                <div className="clinic__info-container">
+                  <h3>{coach.name}</h3>
+                  <div className="clinic__info"> {coach.qualifications}</div>
+                </div>
               </div>
-              <div className="clinic__info-container">
-                <h3>{coach.name}</h3>
-                <div className="clinic__info"> {coach.qualifications}</div>
+              <div className="clinic__description-container">
+                <div className="clinic__description">{coach.description}</div>
+                <SeeSchedule userId={userId} selectedCoach={coach.coachId} />
               </div>
             </div>
-            <div className="clinic__description">{coach.description}</div>
-            <SeeSchedule userId={userId} selectedCoach={coach.coachId} />
-          </div>
-        ))}
-      ;
+          ))}
+      </div>
     </div>
   );
 }

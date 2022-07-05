@@ -15,6 +15,7 @@ function SnapSlider() {
           alt="Booking Appointment"
           className="snap-slider__image--1"
         />
+
         <img
           src={melissa}
           alt="Canadian Weather"

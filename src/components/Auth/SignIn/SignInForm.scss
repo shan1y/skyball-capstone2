@@ -110,6 +110,11 @@
   }
 }
 
+.auth__sign-in-text {
+  margin-top: 1rem;
+  color: $dark-v2;
+}
+
 .form {
   &__container {
     display: flex;

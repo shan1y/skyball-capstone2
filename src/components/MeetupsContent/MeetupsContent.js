@@ -104,8 +104,27 @@ function MeetupsContent({ userId }) {
                     <p className="event__skill">{event.organizer}</p>
                     <h3 className="event__date">Skill Level</h3>
                     <p className="event__skill">beginner</p>
+                    <button
+                      className=" event__buttons-meetup--register"
+                      onClick={() => {
+                        selectEvent(event.id);
+                      }}
+                    >
+                      Register
+                    </button>
+                    <div>{addButton(event)}</div>
+                    {buttonVisible ? (
+                      <button
+                        onClick={() => {
+                          handleDeleteClick(event.id);
+                        }}
+                        className=" event__buttons-meetup--delete"
+                      >
+                        Delete my event
+                      </button>
+                    ) : null}
                   </div>
-                  <div className="event__group">
+                  <div className="event__group event__group--right">
                     <h3 className="event__date">Date</h3>
                     <p className="event__skill">
                       {" "}
@@ -134,27 +153,6 @@ function MeetupsContent({ userId }) {
                   src={event.image}
                 ></img>
               </div>
-            </div>
-            <div className="event__buttons-meetup">
-              <button
-                className=" event__buttons-meetup--register"
-                onClick={() => {
-                  selectEvent(event.id);
-                }}
-              >
-                Register
-              </button>
-              <div>{addButton(event)}</div>
-              {buttonVisible ? (
-                <button
-                  onClick={() => {
-                    handleDeleteClick(event.id);
-                  }}
-                  className=" event__buttons-meetup--delete"
-                >
-                  delete my event
-                </button>
-              ) : null}
             </div>
           </article>
         ))}

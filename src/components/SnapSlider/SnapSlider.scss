@@ -66,6 +66,8 @@
   display: none;
   @include tablet {
     display: flex;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    margin-bottom: 1rem;
   }
 }
 

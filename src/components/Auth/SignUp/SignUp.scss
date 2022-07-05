@@ -105,9 +105,18 @@
     color: $dark;
     font-weight: 500;
     color: $dark-v2;
+    font-size: 10px;
+    font-weight: bold;
+    @include tablet {
+      font-size: 14px;
+    }
     &--text {
       padding-top: 0.5rem;
       color: $dark-v2;
+      font-size: 10px;
+      @include tablet {
+        font-size: 14px;
+      }
     }
   }
 }

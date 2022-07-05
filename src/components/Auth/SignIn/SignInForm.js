@@ -43,7 +43,7 @@ function SignInForm() {
           </div>
           <div className="auth__bottom-container">
             <h2 className="auth__title">User Login</h2>
-            {error && <p>there is an error</p>}
+            {error && <p>Invalid email and password combination</p>}
 
             <form onSubmit={handleSubmit}>
               <div className="form__container">
@@ -73,6 +73,7 @@ function SignInForm() {
                 >
                   Log In
                 </button>
+                <p className="auth__sign-in-text">Don't have an account?</p>
                 <Link className="auth__sign-button" to="/signup">
                   Create Account
                 </Link>

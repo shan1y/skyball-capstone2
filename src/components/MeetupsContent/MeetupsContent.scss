@@ -6,11 +6,16 @@
   align-items: center;
 
   background-color: honeydew;
+
+  &__group--right {
+    min-width: 4rem;
+  }
   &__card {
+    border-top: 1px solid rgb(216, 216, 216);
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    cursor: pointer;
+
     width: 90%;
     &:hover {
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -48,7 +53,7 @@
 
   &__skill {
     color: grey;
-    padding-bottom: 1rem;
+    min-height: 3rem;
   }
 
   &__author {
@@ -59,7 +64,12 @@
     padding: 1rem;
     gap: 1rem;
     display: flex;
-    justify-content: space-around;
+
+    justify-content: center;
+    gap: 1rem;
+    @include tablet {
+      gap: 10rem;
+    }
   }
 }
 
@@ -67,15 +77,37 @@
   display: flex;
 
   &--register {
+    font-size: 10px;
     padding: 0.5rem;
-    margin: 1rem;
     width: 6rem;
     background-color: $primary;
     border-radius: 25px;
     color: white;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(84, 97, 23);
+      transition: all 0.2s ease;
+    }
+    @include tablet {
+      font-size: 14px;
+      width: 8rem;
+    }
   }
 
   &--delete {
     @extend .event__buttons-meetup--register;
+    color: white;
+    font-size: 10px;
+    background-color: rgb(81, 0, 81);
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(198, 179, 179);
+      transition: all 0.2s ease;
+    }
+    @include tablet {
+      font-size: 14px;
+      width: 8rem;
+    }
   }
 }
