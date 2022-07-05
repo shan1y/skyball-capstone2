@@ -5,12 +5,11 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: honeydew;
+
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   @include tablet {
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 2rem;
     @include contain;
   }
 
@@ -22,10 +21,20 @@
     margin-inline: 1rem;
   }
 
+  &__group {
+    min-width: 1rem;
+    word-wrap: break-word;
+    max-width: 3rem;
+    @media (min-width: 400px) {
+      max-width: unset;
+    }
+  }
+
   &__group--right {
     min-width: 4rem;
   }
   &__card {
+    background-color: honeydew;
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -70,11 +79,15 @@
   &__date {
     color: $dark;
     padding-bottom: 1rem;
+    word-wrap: initial;
   }
 
   &__skill {
     color: grey;
-    min-height: 3rem;
+    min-height: 5rem;
+    @media (min-width: 400px) {
+      min-height: 3rem;
+    }
   }
 
   &__author {
@@ -88,6 +101,9 @@
 
     justify-content: center;
     gap: 1rem;
+    @media (min-width: 500px) {
+      gap: 5rem;
+    }
     @include tablet {
       gap: 10rem;
     }
