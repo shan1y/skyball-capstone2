@@ -27,16 +27,12 @@ Maybe you can mention me or this repo in the acknowledgements too
   * [Environment Variables](#key-environment-variables)
 - [Getting Started](#toolbox-getting-started)
   * [Prerequisites](#bangbang-prerequisites)
-  * [Installation](#gear-installation)
-  * [Running Tests](#test_tube-running-tests)
   * [Run Locally](#running-run-locally)
   * [Deployment](#triangular_flag_on_post-deployment)
 - [Usage](#eyes-usage)
 - [Roadmap](#compass-roadmap)
 - [Contributing](#wave-contributing)
   * [Code of Conduct](#scroll-code-of-conduct)
-- [FAQ](#grey_question-faq)
-- [License](#warning-license)
 - [Contact](#handshake-contact)
 - [Acknowledgements](#gem-acknowledgements)
 
@@ -73,9 +69,9 @@ Maybe you can mention me or this repo in the acknowledgements too
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href="https://www.mysql.com/">Firebase Storage</a></li>
-    <li><a href="https://www.postgresql.org/">Firebase Database</a></li>
-    <li><a href="https://redis.io/">Firebase Authentication</a></li>
+    <li><a href="https://firebase.google.com/">Firebase Storage</a></li>
+    <li><a href="https://firebase.google.com/">Firebase Database</a></li>
+    <li><a href="https://firebase.google.com/">Firebase Authentication</a></li>
   </ul>
 </details>
 
@@ -92,7 +88,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 <!-- Env Variables -->
 ### :key: Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables to your .env file. The values for these variables can be obtained by creating an account in Firebase. You will also need to create your own database however with the appropriate collections and documents to be able to run the file.
 
 `REACT_APP_FIREBASE_API_KEY`
 
@@ -121,38 +117,19 @@ This project uses npm as package manager
  npm install
 ```
 
-<!-- Installation -->
-### :gear: Installation
-
-Install my-project with npm
-
-```bash
-  yarn install my-project
-  cd my-project
-```
-   
-<!-- Running Tests -->
-### :test_tube: Running Tests
-
-To run tests, run the following command
-
-```bash
-  yarn test test
-```
-
 <!-- Run Locally -->
 ### :running: Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/Louis3797/awesome-readme-template.git
+  git clone https://github.com/shan1y/skyball-capstone.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd skyball-capstone
 ```
 
 Install dependencies
@@ -178,49 +155,12 @@ To deploy this project run
 Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
 
 
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
-
 <!-- Roadmap -->
 ## :compass: Roadmap
 
 * [ ] Track open spots & numebr of registrants to prevent players from registering if there is no space available.
 * [ ] Todo 2
 
-
-<!-- Contributing -->
-## :wave: Contributing
-
-<a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
-</a>
-
-
-Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
-
-
-<!-- Code of Conduct -->
-### :scroll: Code of Conduct
-
-Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-template/blob/master/CODE_OF_CONDUCT.md)
-
-<!-- FAQ -->
-## :grey_question: FAQ
-
-- Question 1
-
-  + Answer 1
-
-- Question 2
-
-  + Answer 2
 
 
 <!-- Contact -->
