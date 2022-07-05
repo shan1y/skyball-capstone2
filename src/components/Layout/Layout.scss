@@ -1,12 +1,16 @@
 @import "../../styles/variables.scss";
 
+main {
+  flex: 1;
+}
+
 .container {
   height: calc(100vh - 100px);
   background: $bg;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  flex: 1;
   h1 {
     padding: 1.5rem 2.5rem;
     background: linear-gradient(220deg, $primary, rgba($primary, 0.5));

@@ -4,19 +4,33 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  width: 100%;
   background-color: honeydew;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    @include contain;
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 1rem;
+  }
 
   &__group--right {
     min-width: 4rem;
   }
   &__card {
-    border-top: 1px solid rgb(216, 216, 216);
     display: flex;
     flex-direction: column;
     padding: 1rem;
 
-    width: 90%;
+    width: 100%;
     &:hover {
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
@@ -30,6 +44,10 @@
     }
   }
 
+  &__card:not(:first-of-type) {
+    border-top: 1px solid rgb(216, 216, 216);
+  }
+
   &__left {
     width: 100%;
     display: flex;
@@ -39,6 +57,9 @@
     width: 100px;
     height: 100%;
     object-fit: cover;
+    @include tablet {
+      width: 200px;
+    }
   }
   &__title {
     text-transform: uppercase;
@@ -109,5 +130,19 @@
       font-size: 14px;
       width: 8rem;
     }
+  }
+}
+
+.event-register__title {
+  width: 100%;
+  background-color: $primary;
+  margin-inline: 1rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  color: $dark-v2;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  @include tablet {
+    @include contain;
+    font-size: 24px;
   }
 }

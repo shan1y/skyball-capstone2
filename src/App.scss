@@ -32,3 +32,9 @@ body {
   align-items: center;
   gap: 0.5rem;
 }
+
+.App {
+  flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+}

@@ -210,7 +210,7 @@ function CreateEvent({ userId }) {
   };
 
   return (
-    <div>
+    <div className="create-event-body">
       <h1 className="create-event__title">Create a Public Meetup</h1>
       <div className="create-event__form create-event__form--upload">
         <label htmlFor="file-upload" className="custom-file-upload">

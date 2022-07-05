@@ -1,6 +1,13 @@
 @import "../../styles/variables.scss";
 
 .clinic {
+  height: 152vh;
+  @include tablet {
+    height: 110vh;
+  }
+  @include desktop {
+    height: 90vh;
+  }
   &__titles {
     display: flex;
     flex-direction: column;
@@ -35,6 +42,10 @@
     margin-top: 1rem;
     padding-inline: 2rem;
     text-align: center;
+    font-size: 12px;
+    @include tablet {
+      font-size: 14px;
+    }
   }
 
   &__mobile-container {

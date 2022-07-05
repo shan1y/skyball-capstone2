@@ -44,13 +44,17 @@
     padding: 2rem 0.5rem 0.5rem 0.5rem;
     @include tablet {
       padding-top: 4rem;
-      height: 15rem;
+      height: 19rem;
     }
 
     &-body {
       font-weight: 300;
       padding: 1rem;
+      font-size: 14px;
       @include contain;
+      @include tablet {
+        font-size: 16px;
+      }
     }
   }
 }

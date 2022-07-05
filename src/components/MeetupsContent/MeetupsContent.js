@@ -92,6 +92,7 @@ function MeetupsContent({ userId }) {
           userId={userId}
         />
       )}
+      <div className="event-register__title">Register for a local meetup</div>
       <div className="event">
         {events.map((event) => (
           <article className="event__card" key={event.id}>
