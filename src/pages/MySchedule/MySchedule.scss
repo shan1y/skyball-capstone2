@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .clinics {
   &__title {
     background-color: rgb(183, 183, 183);
@@ -6,5 +8,14 @@
     font-weight: 600;
     font-size: 18px;
     padding: 0.5rem;
+  }
+}
+
+.user-profile__for-footer {
+  min-height: 80vh;
+
+  margin-inline: auto;
+  @include tablet {
+    @include contain;
   }
 }

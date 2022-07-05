@@ -7,6 +7,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
 import { FaCheckCircle } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
+import FooterComponent from "../../components/FooterComponent/FooterComponent";
 
 function CreateEvent({ userId }) {
   const history = useHistory();
@@ -66,75 +67,78 @@ function CreateEvent({ userId }) {
   };
 
   return (
-    <div className="create-event-body">
-      <h1 className="create-event__title">Create a Public Meetup</h1>
-      <div className="create-event__form create-event__form--upload">
-        <label htmlFor="file-upload" className="custom-file-upload">
-          Choose Image
-        </label>
-        <input
-          required
-          id="file-upload"
-          type="file"
-          onChange={(event) => {
-            submitImageUpload(event);
-          }}
-        />
-        {!uploadError && (
-          <p className="custom-file-upload-error">No file selected</p>
-        )}
-        {uploadError && (
-          <div className="create-event__form--upload-icons">
-            <p className="custom-file-upload-success">success</p>
-            <FaCheckCircle />
-          </div>
-        )}
+    <>
+      <div className="create-event-body">
+        <h1 className="create-event__title">Create a Public Meetup</h1>
+        <div className="create-event__form create-event__form--upload">
+          <label htmlFor="file-upload" className="custom-file-upload">
+            Choose Image
+          </label>
+          <input
+            required
+            id="file-upload"
+            type="file"
+            onChange={(event) => {
+              submitImageUpload(event);
+            }}
+          />
+          {!uploadError && (
+            <p className="custom-file-upload-error">No file selected</p>
+          )}
+          {uploadError && (
+            <div className="create-event__form--upload-icons">
+              <p className="custom-file-upload-success">success</p>
+              <FaCheckCircle />
+            </div>
+          )}
+        </div>
+
+        <form className="create-event__form" onSubmit={createEvent}>
+          <label className="create-event__form-label">Meetup Title</label>
+          <input
+            required
+            className="create-event__form-input"
+            placeholder="Title"
+            onChange={(event) => {
+              setNewTitle(event.target.value);
+            }}
+          ></input>
+          <label>Skill Level</label>
+          <input
+            required
+            className="create-event__form-input"
+            placeholder="Skill"
+            onChange={(event) => {
+              setNewSkill(event.target.value);
+            }}
+          ></input>
+          <label className="create-event__form-label">Meetup Description</label>
+          <input
+            required
+            className="create-event__form-input"
+            placeholder="Description"
+            onChange={(event) => {
+              setNewDescription(event.target.value);
+            }}
+          ></input>
+          <label className="create-event__form-label">Meetup Date & Time</label>
+          <input
+            required
+            className="create-event__form-input create-event__form-input--date"
+            type="datetime-local"
+            id="meeting-time"
+            name="meeting-time"
+            onChange={(event) => {
+              setNewDate(event.target.value);
+              console.log(event.target.value);
+            }}
+          />
+
+          <button className="create-event__form-button">Create Event</button>
+        </form>
       </div>
-
-      <form className="create-event__form" onSubmit={createEvent}>
-        <label className="create-event__form-label">Meetup Title</label>
-        <input
-          required
-          className="create-event__form-input"
-          placeholder="Title"
-          onChange={(event) => {
-            setNewTitle(event.target.value);
-          }}
-        ></input>
-        <label>Skill Level</label>
-        <input
-          required
-          className="create-event__form-input"
-          placeholder="Skill"
-          onChange={(event) => {
-            setNewSkill(event.target.value);
-          }}
-        ></input>
-        <label className="create-event__form-label">Meetup Description</label>
-        <input
-          required
-          className="create-event__form-input"
-          placeholder="Description"
-          onChange={(event) => {
-            setNewDescription(event.target.value);
-          }}
-        ></input>
-        <label className="create-event__form-label">Meetup Date & Time</label>
-        <input
-          required
-          className="create-event__form-input create-event__form-input--date"
-          type="datetime-local"
-          id="meeting-time"
-          name="meeting-time"
-          onChange={(event) => {
-            setNewDate(event.target.value);
-            console.log(event.target.value);
-          }}
-        />
-
-        <button className="create-event__form-button">Create User</button>
-      </form>
-    </div>
+      <FooterComponent />
+    </>
   );
 }
 

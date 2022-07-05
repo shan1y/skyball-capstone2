@@ -1,17 +1,14 @@
 @import "../../styles/variables.scss";
 
 .clinic {
-  height: 152vh;
   @include tablet {
-    height: 110vh;
-  }
-  @include desktop {
-    height: 90vh;
+    // height: 60vh;
   }
   &__titles {
     display: flex;
     flex-direction: column;
     width: 100%;
+
     margin-top: 1rem;
   }
 
@@ -23,10 +20,12 @@
     margin: 1rem;
     max-width: 350px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    @include tablet {
+      height: 40rem;
+    }
   }
 
   &__greater-container {
-    height: 40rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -88,10 +87,15 @@
     color: white;
     background-color: $primary;
     padding: 1rem;
+    font-size: 12px;
 
     &-table {
       background-color: $primary;
       text-align: left;
     }
   }
+}
+
+.clinics__title--homepage:hover {
+  background-color: $dark-v2;
 }

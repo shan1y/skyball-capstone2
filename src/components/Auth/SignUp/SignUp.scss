@@ -52,7 +52,7 @@
       width: 30rem;
     }
     @include desktop {
-      height: 60vh;
+      height: 40vh;
       width: 40rem;
     }
   }
@@ -66,6 +66,7 @@
     color: white;
     font-size: 14px;
     @include tablet {
+      @include contain;
       font-size: 16px;
     }
   }

@@ -9,6 +9,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db } from "../../../firebase-config";
+import FooterComponent from "../../FooterComponent/FooterComponent";
 
 function UpcomingEvents({ userId }) {
   const options = {
@@ -72,7 +73,6 @@ function UpcomingEvents({ userId }) {
   console.log(events.length == 0);
   return (
     <div>
-      {" "}
       <div className="user-profile">
         <div className="user-profile__left-container">
           <div className="user-profile__picture">

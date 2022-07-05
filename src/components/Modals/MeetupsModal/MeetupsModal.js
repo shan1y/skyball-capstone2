@@ -54,7 +54,7 @@ function MeetupsModal({
             <span className="italics">{title}</span>
           </p>
         </div>
-        <div className="footer">
+        <div className="footer-modal">
           <button
             onClick={() => {
               setOpenModal(false);

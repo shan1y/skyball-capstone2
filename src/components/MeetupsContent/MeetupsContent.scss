@@ -123,7 +123,7 @@
     background-color: rgb(81, 0, 81);
     cursor: pointer;
     &:hover {
-      background-color: rgb(198, 179, 179);
+      background-color: black;
       transition: all 0.2s ease;
     }
     @include tablet {

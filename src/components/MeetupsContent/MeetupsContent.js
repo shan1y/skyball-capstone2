@@ -3,6 +3,7 @@ import MeetupsModal from "../Modals/MeetupsModal/MeetupsModal";
 import { db } from "../../firebase-config";
 import "./MeetupsContent.scss";
 import { deleteDoc, doc } from "firebase/firestore";
+import FooterComponent from "../FooterComponent/FooterComponent";
 
 import { onSnapshot, collection } from "firebase/firestore";
 
@@ -81,83 +82,86 @@ function MeetupsContent({ userId }) {
     }
   };
   return (
-    <div className="event-body">
-      {modalOpen && (
-        <MeetupsModal
-          typeOfEvents="events"
-          setOpenModal={setModalOpen}
-          title={selectedObj.title}
-          userRegistrations={selectedObj.userRegistrations}
-          eventId={selectedObj.id}
-          userId={userId}
-        />
-      )}
-      <div className="event-register__title">Register for a local meetup</div>
-      <div className="event">
-        {events.map((event) => (
-          <article className="event__card" key={event.id}>
-            <div className="event__card--top">
-              <div className="event__left">
-                <h2 className="event__title">{event.title}</h2>
-                <div className="event__group-main-container">
-                  <div className="event__group">
-                    <h3 className="event__date">Organizer</h3>
-                    <p className="event__skill">{event.organizer}</p>
-                    <h3 className="event__date">Skill Level</h3>
-                    <p className="event__skill">beginner</p>
-                    <button
-                      className=" event__buttons-meetup--register"
-                      onClick={() => {
-                        selectEvent(event.id);
-                      }}
-                    >
-                      Register
-                    </button>
-                    <div>{addButton(event)}</div>
-                    {buttonVisible ? (
+    <div>
+      <div className="event-body">
+        {modalOpen && (
+          <MeetupsModal
+            typeOfEvents="events"
+            setOpenModal={setModalOpen}
+            title={selectedObj.title}
+            userRegistrations={selectedObj.userRegistrations}
+            eventId={selectedObj.id}
+            userId={userId}
+          />
+        )}
+        <div className="event-register__title">Register for a local meetup</div>
+        <div className="event">
+          {events.map((event) => (
+            <article className="event__card" key={event.id}>
+              <div className="event__card--top">
+                <div className="event__left">
+                  <h2 className="event__title">{event.title}</h2>
+                  <div className="event__group-main-container">
+                    <div className="event__group">
+                      <h3 className="event__date">Organizer</h3>
+                      <p className="event__skill">{event.organizer}</p>
+                      <h3 className="event__date">Skill Level</h3>
+                      <p className="event__skill">beginner</p>
                       <button
+                        className=" event__buttons-meetup--register"
                         onClick={() => {
-                          handleDeleteClick(event.id);
+                          selectEvent(event.id);
                         }}
-                        className=" event__buttons-meetup--delete"
                       >
-                        Delete my event
+                        Register
                       </button>
-                    ) : null}
-                  </div>
-                  <div className="event__group event__group--right">
-                    <h3 className="event__date">Date</h3>
-                    <p className="event__skill">
-                      {" "}
-                      {new Date(event.date.seconds * 1000).toLocaleDateString(
-                        undefined,
-                        options
-                      )}
-                    </p>
-                    <h3 className="event__date">Time</h3>
-                    <p className="event__skill">
-                      {" "}
-                      {new Date(event.date.seconds * 1000).toLocaleTimeString(
-                        "en-US",
-                        {
-                          timeZone: "America/New_York",
-                        }
-                      )}
-                    </p>
+                      <div>{addButton(event)}</div>
+                      {buttonVisible ? (
+                        <button
+                          onClick={() => {
+                            handleDeleteClick(event.id);
+                          }}
+                          className=" event__buttons-meetup--delete"
+                        >
+                          Delete my event
+                        </button>
+                      ) : null}
+                    </div>
+                    <div className="event__group event__group--right">
+                      <h3 className="event__date">Date</h3>
+                      <p className="event__skill">
+                        {" "}
+                        {new Date(event.date.seconds * 1000).toLocaleDateString(
+                          undefined,
+                          options
+                        )}
+                      </p>
+                      <h3 className="event__date">Time</h3>
+                      <p className="event__skill">
+                        {" "}
+                        {new Date(event.date.seconds * 1000).toLocaleTimeString(
+                          "en-US",
+                          {
+                            timeZone: "America/New_York",
+                          }
+                        )}
+                      </p>
+                    </div>
                   </div>
                 </div>
+                <div className="order__left">
+                  <img
+                    alt="event associated"
+                    className="event__image"
+                    src={event.image}
+                  ></img>
+                </div>
               </div>
-              <div className="order__left">
-                <img
-                  alt="event associated"
-                  className="event__image"
-                  src={event.image}
-                ></img>
-              </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
+      <FooterComponent />
     </div>
   );
 }

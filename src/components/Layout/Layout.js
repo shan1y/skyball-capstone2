@@ -20,7 +20,6 @@ const Layout = ({ children, userId, handleLogout }) => {
       </div>{" "}
       <Header />
       <main className={classes.container}>{children}</main>
-      <FooterComponent />
     </>
   );
 };
