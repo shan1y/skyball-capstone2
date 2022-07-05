@@ -36,7 +36,7 @@ function SignInForm() {
               <div className="auth-image"></div>
               <h2 className="auth-subtitle">
                 Toronto's source for local volleyball meetups and clinics,
-                helping you and your friends can improve your beach volleyball
+                helping you and your friends improve your beach volleyball
                 skills, together.
               </h2>
             </div>
