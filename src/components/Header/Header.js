@@ -12,8 +12,8 @@ const Header = () => {
   const history = useHistory();
   const [menuOpen, setMenuOpen] = useState(false);
   const [size, setSize] = useState({
-    width: 0,
-    height: undefined,
+    width: window.innerWidth,
+    height: window.innerHeight,
   });
 
   useEffect(() => {
@@ -24,7 +24,6 @@ const Header = () => {
       });
     };
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -35,7 +34,10 @@ const Header = () => {
   }, [size.width, menuOpen]);
 
   const menuToggleHandler = () => {
-    if (size.width > 768) {
+    console.log(size);
+
+    if (size.width >= 768) {
+      return;
     } else {
       setMenuOpen(!menuOpen);
     }

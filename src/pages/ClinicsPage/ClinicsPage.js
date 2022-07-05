@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ClinicsPage.scss";
-import { doc, onSnapshot, collection, query, where } from "firebase/firestore";
+import { onSnapshot, collection, query } from "firebase/firestore";
 import { db } from "../../firebase-config";
 import SeeSchedule from "./SeeSchedule/SeeSchedule";
 function ClinicsPage({ userId }) {
@@ -36,7 +36,11 @@ function ClinicsPage({ userId }) {
             <div className="clinic__container" key={coach.id}>
               <div className="clinic__mobile-container">
                 <div className="clinic__image-container">
-                  <img src={coach.image} className="clinic__image"></img>
+                  <img
+                    alt="this is the coach"
+                    src={coach.image}
+                    className="clinic__image"
+                  ></img>
                 </div>
                 <div className="clinic__info-container">
                   <h3>{coach.name}</h3>

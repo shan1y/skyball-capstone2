@@ -4,7 +4,6 @@ import { FaFacebook, FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import { FaRss } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 
