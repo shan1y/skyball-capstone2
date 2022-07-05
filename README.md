@@ -94,9 +94,19 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`API_KEY`
+`REACT_APP_FIREBASE_API_KEY`
 
-`ANOTHER_API_KEY`
+`REACT_APP_FIREBASE_AUTH_DOMAIN`
+
+`REACT_APP_FIREBASE_PROJECT_ID`
+
+`REACT_APP_FIREBASE_STORAGE_BUCKET`
+
+`REACT_APP_FIREBASE_MESSAGING_SENDER_ID`
+  
+`REACT_APP_FIREBASE_APP_ID=1:95244008147`
+ 
+`REACT_APP_FIREBASE_MEASUREMENT_ID`
   
 
 <!-- Getting Started -->
