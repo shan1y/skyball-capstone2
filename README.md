@@ -174,7 +174,7 @@ Project Link: [https://github.com/Louis3797/awesome-readme-template](https://git
 <!-- Acknowledgments -->
 ## :gem: Acknowledgements
 
-Use this section to mention useful resources and libraries that you have used in your projects.
+Thank you to the creators of these libraries that were used in my project:
 
  - [React Icons](https://react-icons.github.io/react-icons/)
  - [SweetAlert2](https://sweetalert2.github.io/)
