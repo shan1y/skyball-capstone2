@@ -57,6 +57,10 @@
     border-top: 1px solid rgb(216, 216, 216);
   }
 
+  &__card:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+
   &__left {
     width: 100%;
     display: flex;
