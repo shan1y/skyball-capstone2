@@ -80,15 +80,15 @@ function ClinicsSessions({ userId }) {
           <article className="clinic__card" key={event.id}>
             <div className="sessions-container__bottom">
               <div className="upcoming-session__container">
-                <div className="upcoming-session__label">Date</div>
-                <div className="upcoming-session__skill">
+                <h3 className="upcoming-session__label">Date</h3>
+                <p className="upcoming-session__skill">
                   {new Date(event.date.seconds * 1000).toLocaleDateString(
                     undefined,
                     options
                   )}
-                </div>
-                <div className="upcoming-session__label">Time</div>
-                <div className="upcoming-session__skill">
+                </p>
+                <h3 className="upcoming-session__label">Time</h3>
+                <p className="upcoming-session__skill">
                   {new Date(event.date.seconds * 1000).toLocaleTimeString(
                     "en-US",
                     {
@@ -96,9 +96,9 @@ function ClinicsSessions({ userId }) {
                     }
                   )}
                   EST
-                </div>
-                <div className="upcoming-session__label">Coach</div>
-                <div className="upcoming-session__skill">{event.coach}</div>
+                </p>
+                <h3 className="upcoming-session__label">Coach</h3>
+                <p className="upcoming-session__skill">{event.coach}</p>
                 <button
                   className="upcoming-session__unregister"
                   onClick={() => {

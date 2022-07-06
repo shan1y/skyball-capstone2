@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import profile_image from "../../../assets/images/profile.png";
 import "./UpcomingEvents.scss";
 import {
   doc,
@@ -76,7 +77,11 @@ function UpcomingEvents({ userId }) {
       <div className="user-profile">
         <div className="user-profile__left-container">
           <div className="user-profile__picture">
-            <img alt=""></img>
+            <img
+              className="user-profile__picture-content"
+              src={profile_image}
+              alt=""
+            ></img>
           </div>
         </div>
         <div className="user-profile__right-container">
@@ -94,8 +99,51 @@ function UpcomingEvents({ userId }) {
       <div className="sessions-container">
         {events.length === 0 && <p>You haven't registered for any events!</p>}
         {events.map((event) => (
-          <div className="order" key={event.id}>
-            <div className="order__card order__card--bottom-border">
+          <>
+            <div className="order" key={event.id}>
+              <div className="order__card order__card--bottom-border">
+                <div className="event__left">
+                  <h2 className="event__title">{event.title}</h2>
+                  <div className="event__group-main-container">
+                    <div className="event__group">
+                      <h3 className="event__date--upcoming">Organizer</h3>
+                      <p className="event__skill--upcoming">
+                        {event.organizer}
+                      </p>
+                      <h3 className="event__date--upcoming">Skill Level</h3>
+                      <p className="event__skill--upcoming">beginner</p>
+                    </div>
+                    <div className="event__group">
+                      <h3 className="event__date--upcoming">Date</h3>
+                      <p className="event__skill--upcoming">
+                        {" "}
+                        {new Date(event.date.seconds * 1000).toLocaleDateString(
+                          undefined,
+                          options
+                        )}
+                      </p>
+                      <h3 className="event__date--upcoming">Time</h3>
+                      <p className="event__skill--upcoming">
+                        {" "}
+                        {new Date(event.date.seconds * 1000).toLocaleTimeString(
+                          "en-US",
+                          {
+                            timeZone: "America/New_York",
+                          }
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    className="order__button"
+                    onClick={() => {
+                      handleEventDelete(event.id, event.userRegistrations);
+                    }}
+                  >
+                    Unregister
+                  </button>
+                </div>
+              </div>
               <div className="order__left">
                 <img
                   alt="event associated"
@@ -103,47 +151,9 @@ function UpcomingEvents({ userId }) {
                   src={event.image}
                 ></img>
               </div>
-              <div className="event__left">
-                <h2 className="event__title">{event.title}</h2>
-                <div className="event__group-main-container">
-                  <div className="event__group">
-                    <h3 className="event__date">Organizer</h3>
-                    <p className="event__skill">{event.organizer}</p>
-                    <h3 className="event__date">Skill Level</h3>
-                    <p className="event__skill">beginner</p>
-                  </div>
-                  <div className="event__group">
-                    <h3 className="event__date">Date</h3>
-                    <p className="event__skill">
-                      {" "}
-                      {new Date(event.date.seconds * 1000).toLocaleDateString(
-                        undefined,
-                        options
-                      )}
-                    </p>
-                    <h3 className="event__date">Time</h3>
-                    <p className="event__skill">
-                      {" "}
-                      {new Date(event.date.seconds * 1000).toLocaleTimeString(
-                        "en-US",
-                        {
-                          timeZone: "America/New_York",
-                        }
-                      )}
-                    </p>
-                  </div>
-                </div>
-                <button
-                  className="order__button"
-                  onClick={() => {
-                    handleEventDelete(event.id, event.userRegistrations);
-                  }}
-                >
-                  Unregister
-                </button>
-              </div>
             </div>
-          </div>
+            <div className="upcoming-session__divider-clinics"></div>
+          </>
         ))}
       </div>
     </div>

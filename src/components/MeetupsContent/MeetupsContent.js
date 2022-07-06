@@ -102,51 +102,52 @@ function MeetupsContent({ userId }) {
                 <div className="event__left">
                   <h2 className="event__title">{event.title}</h2>
                   <div className="event__group-main-container">
-                    <div className="event__group">
-                      <h3 className="event__date">Organizer</h3>
-                      <p className="event__skill">{event.organizer}</p>
-                      <h3 className="event__date">Skill Level</h3>
-                      <p className="event__skill">beginner</p>
+                    {/* <div className="event__group"> */}
+                    <h3 className="event__date">Organizer</h3>
+                    <p className="event__skill">{event.organizer}</p>
+                    <h3 className="event__date">Skill Level</h3>
+                    <p className="event__skill">beginner</p>
+
+                    {/* </div> */}
+                    {/* <div className="event__group event__group--right"> */}
+                    <h3 className="event__date">Date</h3>
+                    <p className="event__skill">
+                      {" "}
+                      {new Date(event.date.seconds * 1000).toLocaleDateString(
+                        undefined,
+                        options
+                      )}
+                    </p>
+                    <h3 className="event__date">Time</h3>
+                    <p className="event__skill">
+                      {" "}
+                      {new Date(event.date.seconds * 1000).toLocaleTimeString(
+                        "en-US",
+                        {
+                          timeZone: "America/New_York",
+                        }
+                      )}
+                    </p>
+                    {/* </div> */}
+                    <button
+                      className=" event__buttons-meetup--register"
+                      onClick={() => {
+                        selectEvent(event.id);
+                      }}
+                    >
+                      Register
+                    </button>
+                    <div>{addButton(event)}</div>
+                    {buttonVisible ? (
                       <button
-                        className=" event__buttons-meetup--register"
                         onClick={() => {
-                          selectEvent(event.id);
+                          handleDeleteClick(event.id);
                         }}
+                        className=" event__buttons-meetup--delete"
                       >
-                        Register
+                        Delete my event
                       </button>
-                      <div>{addButton(event)}</div>
-                      {buttonVisible ? (
-                        <button
-                          onClick={() => {
-                            handleDeleteClick(event.id);
-                          }}
-                          className=" event__buttons-meetup--delete"
-                        >
-                          Delete my event
-                        </button>
-                      ) : null}
-                    </div>
-                    <div className="event__group event__group--right">
-                      <h3 className="event__date">Date</h3>
-                      <p className="event__skill">
-                        {" "}
-                        {new Date(event.date.seconds * 1000).toLocaleDateString(
-                          undefined,
-                          options
-                        )}
-                      </p>
-                      <h3 className="event__date">Time</h3>
-                      <p className="event__skill">
-                        {" "}
-                        {new Date(event.date.seconds * 1000).toLocaleTimeString(
-                          "en-US",
-                          {
-                            timeZone: "America/New_York",
-                          }
-                        )}
-                      </p>
-                    </div>
+                    ) : null}
                   </div>
                 </div>
                 <div className="order__left">
