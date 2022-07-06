@@ -29,10 +29,7 @@ Maybe you can mention me or this repo in the acknowledgements too
   * [Prerequisites](#bangbang-prerequisites)
   * [Run Locally](#running-run-locally)
   * [Deployment](#triangular_flag_on_post-deployment)
-- [Usage](#eyes-usage)
 - [Roadmap](#compass-roadmap)
-- [Contributing](#wave-contributing)
-  * [Code of Conduct](#scroll-code-of-conduct)
 - [Contact](#handshake-contact)
 - [Acknowledgements](#gem-acknowledgements)
 
@@ -149,26 +146,22 @@ To deploy this project run
 ```
 
 
-<!-- Usage -->
-## :eyes: Usage
-
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
-
-
 <!-- Roadmap -->
 ## :compass: Roadmap
 
 * [ ] Track open spots & numebr of registrants to prevent players from registering if there is no space available.
-* [ ] Todo 2
+* [ ] Track number of events signed up for on my schedule page
+* [ ] Allow "contact organizer" option on meetup cards to get in touch with public event organizers
+* [ ] Add "contact me" section to coach cards
 
 
 
 <!-- Contact -->
 ## :handshake: Contact
 
-Your Name - [@shaida_eth](https://twitter.com/shaida_eth) - shannonyazdani@gmail.com
+Shannon Yazdani - [@shaida_eth](https://twitter.com/shaida_eth) - shannonyazdani@gmail.com
 
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
+Project Link: https://skyball.netlify.app/
 
 
 <!-- Acknowledgments -->
