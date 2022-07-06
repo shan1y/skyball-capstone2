@@ -45,15 +45,19 @@ For new players, the current solution that is posting on the fb group for "Toron
 <!-- Screenshots -->
 ### :camera: Screenshots
 
-When you first arrive to the site, you are greated with a log-in page. The website will track your clinic and meetup registrations to your username.
+When you first arrive to the site, you are greated with a log-in page where you can navigate to a sign up page if you don't already have an account. The website will track your clinic and meetup registrations to your username.
 
 ![App Screenshot](https://firebasestorage.googleapis.com/v0/b/skyball-c1e25.appspot.com/o/images%2FPicture1.png?alt=media&token=341bbab0-5af2-4cbd-9448-1dfb8150b27c)
 
-
+The screenshot below shows the Clinics Page, where you can see the list of local coaches offering clinics, and you can register for the ones of your choosing.
   
 ![App Screenshot](https://firebasestorage.googleapis.com/v0/b/skyball-c1e25.appspot.com/o/images%2FPicture3.png?alt=media&token=4e49774f-2466-4311-93d3-38dd9dd097fe)
   
+Once registering for a clinic or public meetup, you can head to your "my schedule" page where you can see your registrations, and you can unregister for those events should you change your mind.
+  
  ![App Screenshot](https://firebasestorage.googleapis.com/v0/b/skyball-c1e25.appspot.com/o/images%2FPicture4.png?alt=media&token=809f38fa-6b23-47da-acfd-2006d68a0bc3)
+  
+  See more here: https://skyball.netlify.app/ It's responsive!
 
 
 <!-- TechStack -->
