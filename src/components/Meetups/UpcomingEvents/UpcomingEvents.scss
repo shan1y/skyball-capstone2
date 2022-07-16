@@ -39,6 +39,14 @@
     border-radius: 50%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    &-content {
+      object-fit: cover;
+      position: absolute;
+      height: 72px;
+      transform: translateX(-35px);
+      width: 72px;
+      position: abss;
+    }
   }
 
   &__name {
@@ -61,17 +69,26 @@
 
 .order {
   width: 100%;
+  display: flex;
 
   &__card {
     display: flex;
     flex-direction: row;
-    padding: 1rem;
+    padding: 1rem 0rem 1rem 0;
     gap: 1rem;
     cursor: pointer;
     width: 100%;
-    &:hover {
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    }
+    // &:hover {
+    //   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    // }
+  }
+
+  &__left {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    // padding-top: 3rem;
+    padding-bottom: 1rem;
   }
 
   &__button {
@@ -81,6 +98,7 @@
     cursor: pointer;
     width: 5rem;
     padding: 0.5rem;
+    margin-left: 1rem;
   }
 }
 
@@ -90,4 +108,19 @@
       display: flex;
     }
   }
+
+  &__date--upcoming {
+    text-align: left;
+  }
+
+  &__skill--upcoming {
+    text-align: left;
+    color: #808080;
+  }
+}
+
+.upcoming-session__divider-clinics {
+  border: 0.5px solid rgb(183, 183, 183);
+  width: 100%;
+  transform: rotate(180deg);
 }

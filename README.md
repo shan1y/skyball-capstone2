@@ -1,70 +1,184 @@
-# Getting Started with Create React App
+<!--
+Hey, thanks for using the awesome-readme-template template.  
+If you have any enhancements, then fork this project and create a pull request 
+or just open an issue with the label "enhancement".
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Don't forget to give this project a star for additional support ;)
+Maybe you can mention me or this repo in the acknowledgements too
+-->
+<div align="left">
 
-## Available Scripts
+  <!-- <img src="assets/logo.png" alt="logo" width="200" height="auto" /> -->
+  <h1>SkyBall</h1>
+  
+  <p>
+   SkyBall allows new volleyball players to meet others, set up games, and enroll in Beach Volleyball Clinics at Toronto's very own woodbine beach, eliminating the need for organizing over text or through FB groups so that you can enhance your skills faster.
+  </p>
+  
+  
 
-In the project directory, you can run:
+<!-- Table of Contents -->
+# :notebook_with_decorative_cover: Table of Contents
 
-### `npm start`
+- [About the Project](#star2-about-the-project)
+  * [Screenshots](#camera-screenshots)
+  * [Tech Stack](#space_invader-tech-stack)
+  * [Features](#dart-features)
+  * [Environment Variables](#key-environment-variables)
+- [Getting Started](#toolbox-getting-started)
+  * [Prerequisites](#bangbang-prerequisites)
+  * [Run Locally](#running-run-locally)
+  * [Deployment](#triangular_flag_on_post-deployment)
+- [Roadmap](#compass-roadmap)
+- [Contact](#handshake-contact)
+- [Acknowledgements](#gem-acknowledgements)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!-- About the Project -->
+## :star2: About the Project
 
-### `npm test`
+Over the past couple years during the pandemic, we saw an increase in interest in beach volleyball due to it being an outdoor sport with minimal equipment required, it's a social sport, and easy to learn and enhance skills. However, for new players looking to meet others of similar skill, it could be a challenge, especially when groups are now fairly exclusive to others as they want to keep a standard skill level amongst all players or have been accustomed to arriving to the beach with "your bubble". 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For new players, the current solution that is posting on the fb group for "Toronto Beach Volleyball and Clinics" of 2K members can be daunting and ineffective. Over the past couple years I've been thinking of what the solution to that problem could be, and now that I'm a web developer I've been able to build my soltuion on the web. With Skyball, you can manage your schedule of volleyball clinics and public events, and even create your own events.
 
-### `npm run build`
+<!-- Screenshots -->
+### :camera: Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When you first arrive to the site, you are greated with a log-in page where you can navigate to a sign up page if you don't already have an account. The website will track your clinic and meetup registrations to your username.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/skyball-c1e25.appspot.com/o/images%2FPicture1.png?alt=media&token=341bbab0-5af2-4cbd-9448-1dfb8150b27c)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The screenshot below shows the Clinics Page, where you can see the list of local coaches offering clinics, and you can register for the ones of your choosing.
+  
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/skyball-c1e25.appspot.com/o/images%2FPicture3.png?alt=media&token=4e49774f-2466-4311-93d3-38dd9dd097fe)
+  
+Once registering for a clinic or public meetup, you can head to your "my schedule" page where you can see your registrations, and you can unregister for those events should you change your mind.
+  
+ ![App Screenshot](https://firebasestorage.googleapis.com/v0/b/skyball-c1e25.appspot.com/o/images%2FPicture4.png?alt=media&token=809f38fa-6b23-47da-acfd-2006d68a0bc3)
+  
+  See more here: https://skyball.netlify.app/ It's responsive!
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- TechStack -->
+### :space_invader: Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://www.typescriptlang.org/">Sass</a></li>
+    <li><a href="https://nextjs.org/">React Icons</a></li>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://tailwindcss.com/">V4 UUId</a></li>
+  </ul>
+</details>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://firebase.google.com/">Firebase Storage</a></li>
+    <li><a href="https://firebase.google.com/">Firebase Database</a></li>
+    <li><a href="https://firebase.google.com/">Firebase Authentication</a></li>
+  </ul>
+</details>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- Features -->
+### :dart: Features
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Sign Up and Login to see your customizable schedule of meetups and clinics
+- Create your own public meetup
+- Register and unregister for public meetups and clinics
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!-- Env Variables -->
+### :key: Environment Variables
 
-### Analyzing the Bundle Size
+To run this project, you will need to add the following environment variables to your .env file. The values for these variables can be obtained by creating an account in Firebase. You will also need to create your own database however with the appropriate collections and documents to be able to run the file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+`REACT_APP_FIREBASE_API_KEY`
 
-### Making a Progressive Web App
+`REACT_APP_FIREBASE_AUTH_DOMAIN`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+`REACT_APP_FIREBASE_PROJECT_ID`
 
-### Advanced Configuration
+`REACT_APP_FIREBASE_STORAGE_BUCKET`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+`REACT_APP_FIREBASE_MESSAGING_SENDER_ID`
+  
+`REACT_APP_FIREBASE_APP_ID=1:95244008147`
+ 
+`REACT_APP_FIREBASE_MEASUREMENT_ID`
+  
 
-### Deployment
+<!-- Getting Started -->
+## 	:toolbox: Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<!-- Prerequisites -->
+### :bangbang: Prerequisites
 
-### `npm run build` fails to minify
+This project uses npm as package manager
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+ npm install
+```
+
+<!-- Run Locally -->
+### :running: Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/shan1y/skyball-capstone.git
+```
+
+Go to the project directory
+
+```bash
+  cd skyball-capstone
+```
+
+Install dependencies
+
+```bash
+  npm install react-router-dom@5.3 sass react-icons uuidv4
+```
+
+
+<!-- Deployment -->
+### :triangular_flag_on_post: Deployment
+
+To deploy this project run
+
+```bash
+  npm start
+```
+
+
+<!-- Roadmap -->
+## :compass: Roadmap
+
+* [ ] Track open spots & numebr of registrants to prevent players from registering if there is no space available.
+* [ ] Track number of events signed up for on my schedule page
+* [ ] Allow "contact organizer" option on meetup cards to get in touch with public event organizers
+* [ ] Add "contact me" section to coach cards
+
+
+
+<!-- Contact -->
+## :handshake: Contact
+
+Shannon Yazdani - [@shaida_eth](https://twitter.com/shaida_eth) - shannonyazdani@gmail.com
+
+Project Link: https://skyball.netlify.app/
+
+
+<!-- Acknowledgments -->
+## :gem: Acknowledgements
+
+Thank you to the creators of these libraries that were used in my project:
+
+ - [React Icons](https://react-icons.github.io/react-icons/)
+ - [SweetAlert2](https://sweetalert2.github.io/)
+ - [Readme Template](https://github.com/othneildrew/Best-README-Template)

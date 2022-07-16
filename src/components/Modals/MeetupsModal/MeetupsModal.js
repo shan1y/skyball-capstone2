@@ -68,7 +68,7 @@ function MeetupsModal({
               register(userId, userRegistrations);
             }}
           >
-            Claim Spot
+            Register
           </button>
         </div>
       </div>

@@ -41,15 +41,15 @@ function SignUpForm() {
               <h1 className="auth-title">Welcome to SkyBall</h1>
               <div className="auth-image"></div>
               <h2 className="auth-subtitle">
-                Toronto's source for local volleyball meetups and clinics so
-                that you and your friends' beach volleyball skills can improve,
-                together.
+                Toronto's source for local volleyball meetups and clinics,
+                helping you and your friends improve your beach volleyball
+                skills, together.
               </h2>
             </div>
           </div>
           <div className="auth__bottom-container">
             <h2 className="auth__title">Sign Up</h2>
-            {/* {currentUser.email} */}
+
             {error && <p>there is an error</p>}
 
             <form onSubmit={handleSubmit}>

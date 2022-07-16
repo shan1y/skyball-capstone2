@@ -5,12 +5,10 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: honeydew;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
   @include tablet {
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 2rem;
     @include contain;
   }
 
@@ -22,10 +20,20 @@
     margin-inline: 1rem;
   }
 
+  &__group {
+    min-width: 1rem;
+    word-wrap: break-word;
+    // max-width: 3rem;
+    @media (min-width: 400px) {
+      max-width: unset;
+    }
+  }
+
   &__group--right {
     min-width: 4rem;
   }
   &__card {
+    background-color: honeydew;
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -41,6 +49,7 @@
     &--top {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
     }
   }
 
@@ -48,33 +57,54 @@
     border-top: 1px solid rgb(216, 216, 216);
   }
 
+  &__card:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+
   &__left {
-    width: 100%;
+    width: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
   }
   &__image {
-    width: 100px;
-    height: 100%;
+    border-radius: 4px;
+    width: 120px;
+    height: 200px;
     object-fit: cover;
+    margin-right: 1rem;
+    @media (min-width: 500px) {
+      width: 250px;
+      height: 200px;
+      margin-right: 3rem;
+    }
     @include tablet {
-      width: 200px;
+      width: 300px;
+      height: 255px;
+      margin-right: 5rem;
     }
   }
   &__title {
     text-transform: uppercase;
     color: black;
     font-weight: 600;
+    text-align: left;
+    padding-inline: 1rem;
   }
 
   &__date {
     color: $dark;
-    padding-bottom: 1rem;
+    // padding-bottom: 1rem;
+    word-wrap: initial;
   }
 
   &__skill {
     color: grey;
-    min-height: 3rem;
+    text-align: left;
+    // min-height: 5rem;
+    @media (min-width: 400px) {
+      // min-height: 3rem;
+    }
   }
 
   &__author {
@@ -83,13 +113,18 @@
 
   &__group-main-container {
     padding: 1rem;
-    gap: 1rem;
+    height: 100%;
+    // gap: 0.3rem;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    // justify-content: center;
 
-    justify-content: center;
-    gap: 1rem;
+    @media (min-width: 500px) {
+      // gap: 5rem;
+    }
     @include tablet {
-      gap: 10rem;
+      // gap: 10rem;
     }
   }
 }
@@ -98,20 +133,22 @@
   display: flex;
 
   &--register {
+    margin-top: 0.5rem;
     font-size: 10px;
     padding: 0.5rem;
     width: 6rem;
     background-color: $primary;
     border-radius: 25px;
     color: white;
-    margin-bottom: 1rem;
+    font-weight: bold;
+
     cursor: pointer;
     &:hover {
       background-color: rgb(84, 97, 23);
       transition: all 0.2s ease;
     }
     @include tablet {
-      font-size: 14px;
+      font-size: 12px;
       width: 8rem;
     }
   }
@@ -127,7 +164,7 @@
       transition: all 0.2s ease;
     }
     @include tablet {
-      font-size: 14px;
+      font-size: 12px;
       width: 8rem;
     }
   }
