@@ -95,7 +95,7 @@ Once registering for a clinic or public meetup, you can head to your "my schedul
 <!-- Env Variables -->
 ### :key: Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file. The values for these variables can be obtained by creating an account in Firebase. You will also need to create your own database however with the appropriate collections and documents to be able to run the file.
+To run this project locally (not from the deployed site), you will need to add the following environment variables to your .env file. The values for these variables can be obtained by creating an account in Firebase. You will also need to create your own database however with the appropriate collections and documents to be able to run the file. 
 
 `REACT_APP_FIREBASE_API_KEY`
 
