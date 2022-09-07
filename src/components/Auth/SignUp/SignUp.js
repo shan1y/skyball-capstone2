@@ -8,6 +8,7 @@ function SignUpForm() {
   const history = useHistory();
   const { signUp } = useAuth();
   const emailRef = useRef();
+  // const usernameRef = useRef();
   const passwordRef = useRef();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -15,8 +16,6 @@ function SignUpForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(passwordRef.current.value);
-    console.log(passwordConfirmRef.current.value);
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match");
     }
@@ -24,7 +23,11 @@ function SignUpForm() {
     try {
       setError(false);
       setLoading(true);
-      await signUp(emailRef.current.value, passwordRef.current.value);
+      await signUp(
+        emailRef.current.value,
+        passwordRef.current.value
+        // usernameRef.current.value
+      );
       history.push("/login");
     } catch {
       setError("Failed to create an acccount");
@@ -54,6 +57,14 @@ function SignUpForm() {
 
             <form onSubmit={handleSubmit}>
               <div className="form__container">
+                {/* <div className="form__input-wrapper">
+                  <input
+                    placeholder="Email"
+                    type="email"
+                    ref={usernameRef}
+                  ></input>
+                  <FaUserAlt className="form__input-icon" />
+                </div> */}
                 <div className="form__input-wrapper">
                   <input
                     placeholder="Email"

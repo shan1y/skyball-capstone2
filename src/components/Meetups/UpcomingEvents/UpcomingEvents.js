@@ -21,6 +21,8 @@ function UpcomingEvents({ userId }) {
   };
   const [events, setEvents] = useState([]);
 
+  console.log();
+
   useEffect(() => {
     const colRef = collection(db, "events");
     const q = query(
@@ -71,92 +73,89 @@ function UpcomingEvents({ userId }) {
     });
   };
 
-  console.log(events.length == 0);
   return (
-    <div>
-      <div className="user-profile">
-        <div className="user-profile__left-container">
-          <div className="user-profile__picture">
-            <img
-              className="user-profile__picture-content"
-              src={profile_image}
-              alt=""
-            ></img>
-          </div>
-        </div>
-        <div className="user-profile__right-container">
-          <div className="user-profile__name">User Profile: {userId}</div>
-          <div className="user-profile__stats">
-            <div className="user-profile__stats-info">
-              {`${events.length}  event registration(s)`}
+    userId && (
+      <div>
+        <div className="user-profile">
+          <div className="user-profile__left-container">
+            <div className="user-profile__picture">
+              <p className="user-profile__picture-content">
+                {userId.charAt(0).toUpperCase()}
+              </p>
             </div>
-            <div className="user-profile__stats-info">0 created</div>
-            <div className="user-profile__stats-info">0 following</div>
+          </div>
+          <div className="user-profile__right-container">
+            <div className="user-profile__name">User Profile: {userId}</div>
+            <div className="user-profile__stats">
+              <div className="user-profile__stats-info">
+                {`${events.length}  event registration(s)`}
+              </div>
+              <div className="user-profile__stats-info">0 created</div>
+              <div className="user-profile__stats-info">0 following</div>
+            </div>
           </div>
         </div>
-      </div>
-      <h1 className="clinics__title">Upcoming Events</h1>
-      <div className="sessions-container">
-        {events.length === 0 && <p>You haven't registered for any events!</p>}
-        {events.map((event) => (
-          <>
-            <div className="order" key={event.id}>
-              <div className="order__card order__card--bottom-border">
-                <div className="event__left">
-                  <h2 className="event__title">{event.title}</h2>
-                  <div className="event__group-main-container">
-                    <div className="event__group">
-                      <h3 className="event__date--upcoming">Organizer</h3>
-                      <p className="event__skill--upcoming">
-                        {event.organizer}
-                      </p>
-                      <h3 className="event__date--upcoming">Skill Level</h3>
-                      <p className="event__skill--upcoming">beginner</p>
-                    </div>
-                    <div className="event__group">
-                      <h3 className="event__date--upcoming">Date</h3>
-                      <p className="event__skill--upcoming">
-                        {" "}
-                        {new Date(event.date.seconds * 1000).toLocaleDateString(
-                          undefined,
-                          options
-                        )}
-                      </p>
-                      <h3 className="event__date--upcoming">Time</h3>
-                      <p className="event__skill--upcoming">
-                        {" "}
-                        {new Date(event.date.seconds * 1000).toLocaleTimeString(
-                          "en-US",
-                          {
+        <h1 className="clinics__title">Upcoming Events</h1>
+        <div className="sessions-container">
+          {events.length === 0 && <p>You haven't registered for any events!</p>}
+          {events.map((event) => (
+            <>
+              <div className="order" key={event.id}>
+                <div className="order__card order__card--bottom-border">
+                  <div className="event__left">
+                    <h2 className="event__title">{event.title}</h2>
+                    <div className="event__group-main-container">
+                      <div className="event__group">
+                        <h3 className="event__date--upcoming">Organizer</h3>
+                        <p className="event__skill--upcoming">
+                          {event.organizer}
+                        </p>
+                        <h3 className="event__date--upcoming">Skill Level</h3>
+                        <p className="event__skill--upcoming">beginner</p>
+                      </div>
+                      <div className="event__group">
+                        <h3 className="event__date--upcoming">Date</h3>
+                        <p className="event__skill--upcoming">
+                          {" "}
+                          {new Date(
+                            event.date.seconds * 1000
+                          ).toLocaleDateString(undefined, options)}
+                        </p>
+                        <h3 className="event__date--upcoming">Time</h3>
+                        <p className="event__skill--upcoming">
+                          {" "}
+                          {new Date(
+                            event.date.seconds * 1000
+                          ).toLocaleTimeString("en-US", {
                             timeZone: "America/New_York",
-                          }
-                        )}
-                      </p>
+                          })}
+                        </p>
+                      </div>
                     </div>
+                    <button
+                      className="order__button"
+                      onClick={() => {
+                        handleEventDelete(event.id, event.userRegistrations);
+                      }}
+                    >
+                      Unregister
+                    </button>
                   </div>
-                  <button
-                    className="order__button"
-                    onClick={() => {
-                      handleEventDelete(event.id, event.userRegistrations);
-                    }}
-                  >
-                    Unregister
-                  </button>
+                </div>
+                <div className="order__left">
+                  <img
+                    alt="event associated"
+                    className="event__image"
+                    src={event.image}
+                  ></img>
                 </div>
               </div>
-              <div className="order__left">
-                <img
-                  alt="event associated"
-                  className="event__image"
-                  src={event.image}
-                ></img>
-              </div>
-            </div>
-            <div className="upcoming-session__divider-clinics"></div>
-          </>
-        ))}
+              <div className="upcoming-session__divider-clinics"></div>
+            </>
+          ))}
+        </div>
       </div>
-    </div>
+    )
   );
 }
 

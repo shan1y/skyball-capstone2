@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { useAuth } from "./contexts/AuthContext";
-import { Switch, Route, BrowserRouter, useHistory } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  BrowserRouter,
+  useHistory,
+  useLocation,
+} from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Home from "./pages/Home";
 import "./App.scss";
 import MySchedule from "./pages/MySchedule/MySchedule";
@@ -19,6 +26,7 @@ function App() {
   const { currentUser, logOut } = useAuth([]);
   const [error, setError] = useState("");
   const history = useHistory();
+  const location = useLocation();
 
   useEffect(() => {
     if (!currentUser) {
@@ -41,33 +49,37 @@ function App() {
   return (
     <div className="App">
       <>
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/signup" component={SignUpForm} />
-            <Route exact path="/login" component={SignInForm} />
-            <PrivateRoute exact path="/">
-              <Layout handleLogout={handleLogout} userId={userId}>
-                <Home userId={userId} />
-              </Layout>
-            </PrivateRoute>
-            <PrivateRoute exact path="/myschedule">
-              <Layout handleLogout={handleLogout} userId={userId}>
-                <MySchedule userId={userId} />
-              </Layout>
-            </PrivateRoute>
-            <PrivateRoute exact path="/create-event">
-              <Layout handleLogout={handleLogout} userId={userId}>
-                <CreateEvent userId={userId} />
-              </Layout>
-            </PrivateRoute>
-            <PrivateRoute exact path="/clinics">
-              <Layout handleLogout={handleLogout} userId={userId}>
-                <ClinicsPage userId={userId} />
-              </Layout>
-            </PrivateRoute>
-            <Route exact path="/login" component={SignInForm} />
-          </Switch>
-        </BrowserRouter>
+        {/* <BrowserRouter> */}
+        <TransitionGroup>
+          <CSSTransition timeout={4000} classNames="fade" key={location.key}>
+            <Switch location={location}>
+              <Route exact path="/signup" component={SignUpForm} />
+              <Route exact path="/login" component={SignInForm} />
+              <PrivateRoute exact path="/">
+                <Layout handleLogout={handleLogout} userId={userId}>
+                  <Home userId={userId} />
+                </Layout>
+              </PrivateRoute>
+              <PrivateRoute exact path="/myschedule">
+                <Layout handleLogout={handleLogout} userId={userId}>
+                  <MySchedule userId={userId} />
+                </Layout>
+              </PrivateRoute>
+              <PrivateRoute exact path="/create-event">
+                <Layout handleLogout={handleLogout} userId={userId}>
+                  <CreateEvent userId={userId} />
+                </Layout>
+              </PrivateRoute>
+              <PrivateRoute exact path="/clinics">
+                <Layout handleLogout={handleLogout} userId={userId}>
+                  <ClinicsPage userId={userId} />
+                </Layout>
+              </PrivateRoute>
+              <Route exact path="/login" component={SignInForm} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+        {/* </BrowserRouter> */}
       </>
     </div>
   );
