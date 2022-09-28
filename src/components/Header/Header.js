@@ -34,8 +34,6 @@ const Header = () => {
   }, [size.width, menuOpen]);
 
   const menuToggleHandler = () => {
-    console.log(size);
-
     if (size.width >= 768) {
       return;
     } else {

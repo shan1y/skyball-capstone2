@@ -46,14 +46,11 @@ function MeetupsContent({ userId }) {
   };
 
   const deleteEvent = async (eventIdentification) => {
-    console.log(eventIdentification);
     const eventDoc = doc(db, "events", eventIdentification);
     try {
       await deleteDoc(eventDoc);
       fireSuccess();
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (e) {}
   };
 
   const fireSuccess = async () => {

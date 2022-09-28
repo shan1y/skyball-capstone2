@@ -23,17 +23,12 @@ function SignUpForm() {
     try {
       setError(false);
       setLoading(true);
-      await signUp(
-        emailRef.current.value,
-        passwordRef.current.value
-        // usernameRef.current.value
-      );
+      await signUp(emailRef.current.value, passwordRef.current.value);
       history.push("/login");
     } catch {
       setError("Failed to create an acccount");
     }
   }
-  console.log(error);
 
   return (
     <>

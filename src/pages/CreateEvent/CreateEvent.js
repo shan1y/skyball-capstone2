@@ -22,7 +22,7 @@ function CreateEvent({ userId }) {
 
   const createEvent = async (event) => {
     event.preventDefault();
-    console.log(imageName);
+
     await addDoc(eventsCreateCollectionRef, {
       title: newTitle,
       skill: newSkill,
@@ -44,7 +44,6 @@ function CreateEvent({ userId }) {
   }, [imageUpload]);
 
   const uploadImage = () => {
-    console.log(imageUpload);
     if (imageUpload == null) return;
     setUploadError(true);
     const imageName = `/images/${imageUpload.name + v4()}`;
@@ -55,7 +54,6 @@ function CreateEvent({ userId }) {
   };
 
   const getImageLink = (imageRef) => {
-    console.log(imageRef);
     getDownloadURL(imageRef).then((url) => {
       setImageName(url);
     });
@@ -130,7 +128,6 @@ function CreateEvent({ userId }) {
             name="meeting-time"
             onChange={(event) => {
               setNewDate(event.target.value);
-              console.log(event.target.value);
             }}
           />
 

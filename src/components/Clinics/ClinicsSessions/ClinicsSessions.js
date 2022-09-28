@@ -61,8 +61,6 @@ function ClinicsSessions({ userId }) {
   };
 
   const unRegister = async (id, userRegistrations) => {
-    console.log(id);
-    console.log(userRegistrations);
     const docRef = doc(db, "clinics", id);
     await updateDoc(docRef, {
       userRegistrations: userRegistrations.filter((element) => {

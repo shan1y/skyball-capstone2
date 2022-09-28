@@ -21,8 +21,6 @@ function UpcomingEvents({ userId }) {
   };
   const [events, setEvents] = useState([]);
 
-  console.log();
-
   useEffect(() => {
     const colRef = collection(db, "events");
     const q = query(
